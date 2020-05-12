@@ -1,0 +1,102 @@
+openapi: 3.0.0
+info:
+  version: "1.0.0"
+  title: Final Project
+  description: A simple LSTM to predict stock prices
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    name: REST Service SVM Example
+  license:
+    name: Apache
+paths:
+  /upload/<filename>/url/<url>:
+    get:
+      tags:
+        - UPLOAD
+      operationId: service.main.upload
+      description: download new data set
+      responses:
+        '200':
+          description: download new data set
+          content:
+            application/json:
+              schema: {}
+
+  /read_data/<arg1>:
+    get:
+      tags:
+        - READ
+      operationId: service.main.read_file
+      description: Read the data
+      responses:
+        '200':
+          description: read the data
+          content:
+            application/json:
+              schema: {}
+
+  /split:
+    get:
+      tags:
+        - Split
+      operationId: service.main.split_data
+      description: split data in train and test
+      responses:
+        '200':
+          description: split the data
+          content:
+            application/json:
+              schema: {}
+
+  /plot:
+    get:
+      tags:
+        - PLOT
+      operationId: service.main.plot_data2
+      description: Plot the data provided
+      responses:
+        '200':
+          description: Plot the data
+          content:
+            application/json:
+              schema: {}
+
+  /train:
+    get:
+      tags:
+        - TRAIN
+      operationId: service.main.train_model
+      description: Train the data
+      responses:
+        '200':
+          description: train the data
+          content:
+            application/json:
+              schema: {}
+
+  /predict:
+    get:
+      tags:
+        - PREDICT
+      operationId: service.main.predict
+      description: Predict the data
+      responses:
+        '200':
+          description: Predict the data
+          content:
+            application/json:
+              schema: {}
+
+  /plot_pred:
+    get:
+      tags:
+        - PLOT
+      operationId: service.main.plot_predictions
+      description: Plot the predicted data
+      responses:
+        '200':
+          description: Plotting
+          content:
+            application/json:
+              schema: {}
+                                        
